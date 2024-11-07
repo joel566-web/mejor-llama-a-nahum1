@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mejor Llama a Nahum</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+    <!-- Navbar que contiene el título y el icono de hamburguesa -->
+    <div class="navbar">
+        
+        <!-- Contenedor del título centrado -->
+        <div class="navbar-titulo">
+            <a href="https://es.google.com" class="titulo">Mejor Llama a Nahum </a>
+        </div>        
+
+        <!-- Contenedor de la hamburguesa y el menú desplegable -->
+        <div class="navbar-menu">
+            <div class="hamburguesa">☰</div>
+
+            <!-- Menú desplegable -->
+            <div class="menu-desplegable" id="menu">
+                <a href="#">Inicio</a>
+    
+            </div>
+        </div>
+    </div>
+
+    <div id="miModal" class="modal">
+        <span class="cerrar" onclick="cerrarModal()">&times;</span>
+        <img class="modal-contenido" id="imgModal" src="./Us.jpg" alt="Nosotros">
+    </div>
+
+    <div class="contenido-principal">
+        <h1 class="texto-principal">Servicios de mejor llama a nahum </h1>
+        <p class="texto-secundario"> Bienvenid@ a la página de servicio de mejor llama a nahum, acá te voy a ayudar a solucionar los problemas que pueda estar presentando tu comptadora o notebook.</p>
+       
+           <!-- Sección para ingresar Gmail -->
+            <p class="texto-ingreso">Ingresa aquí tu Gmail:</p>
+            <input type="email" id="campoGmail" class="campo-gmail" placeholder="ejempl@gmail.com">
+            <button id="botonEnviar" class="boton-enviar">Enviar</button>
+
+            <!-- Modal (Ventana flotante para describir el problema) -->
+            <div id="modalProblema" class="modal">
+                <div class="modal-content">
+                <span id="cerrarModal" class="cerrar">&times;</span>
+                <h2>Describe tu problema o mantenimiento qe dese tener</h2>
+                <form id="formProblema">
+                <textarea id="campoProblema" placeholder="Escribe tu problema aquí..." required></textarea>
+            <button type="submit" class="boton-enviar">Enviar problema</button>
+        </form>
+    </div>
+</div>
+          <div class="services">
+            <h2>Servicios que Ofrecemos</h2>
+            <div class="service-item">
+                <h3>Reparación de partes de computadoras que esten fallando</h3>
+                <p>hacemos mantenimiento de cualquier tipo de problema que tenga</p>
+            </div>
+        
+    </div>
+    
+    <script src="script.js"></script>
+
+        <!-- Pie de página -->
+        <footer>
+            <p>© 2024 mejor llama a nahum.</p>
+            <p>Contáctanos: <a href="https://wa.me/+5493884795411" target="_blank">WhatsApp</a></p>
+            <p><a href="https://www.instagram.com/mejor.llama.a.nahum1/" target="_blank">Contáctanos en Instagram</a></p>
+        </footer>
+    
+</body>
+</html>

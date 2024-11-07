@@ -1,0 +1,388 @@
+/* Estilos básicos */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar {
+    background-color: #333;
+    padding: 10px;
+    position: relative;
+    display: flex;
+    justify-content: space-between; /* Espacia el título y la hamburguesa */
+    align-items: center;
+    z-index: 1;
+}
+
+/* Estilos del contenedor del título */
+.navbar-titulo {
+    flex: 1; /* Toma espacio para centrar el título */
+    text-align: center;
+}
+
+/* Estilos del título como enlace */
+.titulo {
+    color: white;
+    font-size: 24px;
+    font-family: "Times New Roman", serif;
+    text-decoration: none; /* Elimina el subrayado */
+}
+
+.titulo:hover {
+    color: #cccccc; /* Cambia el color al pasar el mouse, opcional */
+}
+
+
+/* Estilos del contenedor de hamburguesa y menú */
+.navbar-menu {
+    display: flex;
+    align-items: center;
+}
+
+/* Estilos del icono de la hamburguesa */
+.hamburguesa {
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+/* Menú desplegable */
+.menu-desplegable {
+    background-color: #333;
+    position: absolute;
+    top: 50px; /* Coloca el menú debajo de la hamburguesa */
+    right: 10px; /* Alinea el menú a la derecha de la hamburguesa */
+    border-radius: 5px;
+    overflow: hidden;
+    width: 150px;
+    height: 0;
+    visibility: hidden; /* Inicialmente oculto */
+    transition: height 0.3s ease, visibility 0s 0.3s;
+}
+
+/* Mostrar el menú al pasar el mouse sobre la hamburguesa */
+.hamburguesa:hover + .menu-desplegable,
+.menu-desplegable:hover {
+    height: 160px; /* Altura del menú cuando se despliega */
+    visibility: visible;
+    transition: height 0.3s ease, visibility 0s;
+}
+
+/* Estilos para los enlaces dentro del menú */
+.menu-desplegable a {
+    display: block;
+    color: white;
+    padding: 10px;
+    text-decoration: none;
+    text-align: center;
+}
+
+.menu-desplegable a:hover {
+    background-color: #575757;
+}
+
+/* Estilos de la sección de contenido principal */
+.contenido-principal {
+    background-color: #e0f7da; /* Verde claro */
+    padding: 60px 20px; /* Espacio en la parte superior */
+    text-align: center;
+}
+
+/* Estilos del texto principal */
+.texto-principal {
+    font-size: 36px;
+    color: #333;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    margin-bottom: 10px; /* Espacio entre el título y el texto secundario */
+}
+
+/* Estilos del texto secundario */
+.texto-secundario {
+    font-size: 18px; /* Tamaño más pequeño */
+    color: #555; /* Tono gris para menor contraste */
+    font-family: Arial, sans-serif;
+    max-width: 600px;
+    margin: 0 auto; /* Centrado horizontal */
+}
+
+/* Estilos del texto de ingreso de Gmail */
+.texto-ingreso {
+    font-size: 18px;
+    color: #333;
+    margin-top: 40px; /* Espacio entre el texto explicativo y esta sección */
+}
+
+/* Estilos del campo de entrada de Gmail */
+.campo-gmail {
+    font-size: 16px;
+    padding: 10px;
+    width: 250px;
+    border: 2px solid #333;
+    border-radius: 5px;
+    margin-top: 10px; /* Espacio debajo del texto de Gmail */
+}
+/* Estilos del botón de enviar */
+.boton-enviar {
+    font-size: 16px;
+    padding: 10px 20px;
+    margin-left: 10px; /* Espacio entre el campo y el botón */
+    background-color: #4CAF50; /* Color verde */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.boton-enviar:hover {
+    background-color: #45a049; /* Color al pasar el mouse */
+}
+/* Estilos de la ventana modal */
+.modal {
+    display: none; /* Oculta la ventana modal por defecto */
+    position: fixed;
+    z-index: 1000; /* Se muestra sobre otros elementos */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro semi-transparente */
+    overflow: hidden; /* Evita el scroll de la página mientras la modal está visible */
+}
+
+/* Estilos de la ventana modal con animación */
+.modal-content {
+    background-color: #fefefe;
+    margin: 0 auto;
+    padding: 30px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+    border-radius: 10px;
+    text-align: center;
+    position: absolute; /* Cambiar a posición absoluta para centrar */
+    top: 50%; /* Centrado verticalmente */
+    left: 50%; /* Centrado horizontalmente */
+    transform: translate(-50%, -50%); /* Mover la modal hacia arriba y a la izquierda para centrarla */
+    animation: deslizamiento 0.5s ease-out forwards; /* Animación de deslizamiento */
+}
+
+/* Animación de deslizamiento desde abajo */
+@keyframes deslizamiento {
+    0% {
+        transform: translate(-50%, 50%); /* Comienza desde abajo */
+    }
+    100% {
+        transform: translate(-50%, -50%); /* Termina centrado */
+    }
+}
+
+/* Estilos del botón de cierre de la ventana modal */
+.cerrar {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Estilos del campo de texto en la modal */
+#campoProblema {
+    width: 100%;
+    height: 120px;
+    margin: 15px 0;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #333;
+    font-size: 16px;
+    resize: none; /* Desactiva el redimensionamiento */
+}
+
+/* Estilos del botón de enviar la descripción */
+.boton-enviar {
+    font-size: 16px;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.boton-enviar:hover {
+    background-color: #45a049; /* Cambio de color al pasar el mouse */
+}
+/* Estilos para el pie de página */
+footer {
+    background-color: #333; /* Color de fondo oscuro */
+    color: white; /* Color del texto en blanco */
+    text-align: center; /* Centrado del texto */
+    padding: 20px 0; /* Espaciado superior e inferior */
+    position: relative; /* Para asegurarnos de que se quede en la parte inferior */
+    bottom: 0;
+    width: 100%; /* Ocupa todo el ancho de la página */
+}
+
+footer a {
+    color: #4CAF50; /* Color verde para los enlaces */
+    text-decoration: none; /* Sin subrayado */
+}
+
+footer a:hover {
+    text-decoration: underline; /* Subrayado cuando pasa el mouse */
+}
+
+/* Hacer que el pie de página sea visible siempre al final de la página */
+body {
+    margin-bottom: 80px; /* Espacio para evitar que el pie de página se sobreponga al contenido */
+}
+
+/* Asegura que el HTML y BODY ocupen el 100% de la altura de la pantalla */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+/* Contenido principal que ocupa toda la altura disponible */
+.main-content {
+    min-height: 100%; /* Ahora ocupa todo el alto de la pantalla */
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+}
+
+/* El pie de página siempre en la parte inferior */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+    width: 100%;
+    bottom: 0;
+    margin-top: auto; /* Esto empuja el pie de página al final */
+}
+.services {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #f4f4f4;
+    border-radius: 8px;
+}
+
+.service-item {
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+.service-item h3 {
+    color: #333;
+}
+
+.service-item p {
+    color: #666;
+}
+.contact-form {
+    margin-top: 40px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 16px;
+}
+
+.contact-form input, .contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.contact-form button {
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.contact-form button:hover {
+    background-color: #555;
+}
+footer a {
+    color: #fff; /* Color blanco para el texto */
+    text-decoration: none; /* Elimina el subrayado */
+    font-weight: bold; /* Pone el texto en negrita */
+    margin-top: 10px;
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 4px;
+    background-color: #4c6ef5; /* Un color azul que combine bien */
+}
+
+footer a:hover {
+    background-color: #3a5bbf; /* Cambia el color de fondo cuando el usuario pase el mouse */
+}
+
+#imagenNosotros {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro */
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+#imagenNosotros img {
+    max-width: 80%;
+    max-height: 80%;
+    margin: auto;
+    display: block;
+}
+/* Estilos del Modal */
+.modal {
+    display: none; /* Oculto por defecto */
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.8); /* Fondo semitransparente */
+}
+
+/* Contenido del Modal */
+.modal-contenido {
+    margin: auto;
+    display: block;
+    max-width: 80%;
+    max-height: 80%;
+}
+
+/* Botón de cerrar */
+.cerrar {
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    color: #fff;
+    font-size: 35px;
+    font-weight: bold;
+    cursor: pointer;
+}
